@@ -113,7 +113,7 @@ class ViewTaskMembersView(APIView):
 
 
 class UpdateTaskStatusView(APIView):
-    def patch(self, request, pk):
+    def put(self, request, pk):
         task = Task.objects.get(pk=pk)
         task.status = request.data.get('status')
         task.save()
